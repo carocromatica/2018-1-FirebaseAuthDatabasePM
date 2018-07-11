@@ -1,38 +1,58 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div>
-            <!--Login-->
-            <div id="loggedIn">
-                <p id="username"></p>
-                <input id="logout" onclick="logoutWithFirebase()" type="button" value="LOGOUT">
-            </div>
-            <!--Autentificación con mail-->
-            <div id="loggedOut">
-                <input id="email" type="email">
-                <input id="password" type="password">
-                <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
-                <input id="loginButton" onclick="loginWithFirebase()" type="button" value="LOGIN">
-            <!--Autentificación con facebook-->    
-                <input id="facebookButton" onclick="facebookLoginWithFirebase()" type="button" value="FACEBOOK LOGIN">
-            </div>
-        </div>
-        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyDz28W-yh2DViQiA0xscpkgGVlfRlkYuQU",
-                authDomain: "gifchatlaboratoria.firebaseapp.com",
-                databaseURL: "https://gifchatlaboratoria.firebaseio.com",
-                projectId: "gifchatlaboratoria",
-                storageBucket: "gifchatlaboratoria.appspot.com",
-                messagingSenderId: "103111342125"
-            };
-            firebase.initializeApp(config);
-        </script>
-        <script src="app.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+<!--Autentificacion-->
+<div>
+  <!--Login-->
+  <div id="loggedIn">
+      <p id="username"></p>
+      <input id="logout" onclick="logoutWithFirebase()" type="button" value="LOGOUT">
+  </div>
+  <!--Autentificación con mail-->
+  <div id="loggedOut">
+      <input id="email" type="email">
+      <input id="password" type="password">
+      <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
+      <input id="loginButton" onclick="loginWithFirebase()" type="button" value="LOGIN">
+  <!--Autentificación con facebook-->    
+      <input id="facebookButton" onclick="facebookLoginWithFirebase()" type="button" value="FACEBOOK LOGIN">
+  </div>
+  <!--Contenedor de gif-->                                    
+  <div id="gifContainer">
+  </div>
+  <!--Opción para enviar gif-->            
+  <div>
+      <input id="gifArea" type="text"> <input id="sendGif" onclick="sendGif()" type="button" value="SEND GIF">
+  </div>
+  <!--Opción para enviar imagen-->
+  <div>
+      <input id="photoFileSelector" type="file"> <input id="sendPhoto" type="button" onclick="sendPhotoToStorage()" value="SEND PHOTO">
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyABMlfpf6BIhSNsCHAzHyrazcKp0tyepz0",
+    authDomain: "gifchat-d3ade.firebaseapp.com",
+    databaseURL: "https://gifchat-d3ade.firebaseio.com",
+    projectId: "gifchat-d3ade",
+    storageBucket: "gifchat-d3ade.appspot.com",
+    messagingSenderId: "786678117276"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  <script src="assets/app.js"></script>
+</body>
+
 </html>
